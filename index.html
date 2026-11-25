@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Riyanto — Lecturer & Full-Stack Dev</title>
+<style>
+  :root {
+    --bg: #0f172a;
+    --surface: #1e293b;
+    --primary: #3b82f6;
+    --accent: #10b981;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --border: #334155;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+  a { color: var(--primary); text-decoration: none; }
+  a:hover { color: #93c5fd; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  /* Header */
+  header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 0; border-bottom: 1px solid var(--border);
+  }
+  .logo { font-size: 1.5rem; font-weight: 700; color: var(--text); }
+  nav a { margin-left: 24px; font-size: 0.95rem; }
+
+  /* Hero */
+  .hero {
+    text-align: center; padding: 100px 24px 80px;
+    background: radial-gradient(ellipse at center, #1e3a5f 0%, #0f172a 70%);
+  }
+  .hero h1 { font-size: 2.8rem; margin-bottom: 12px; }
+  .hero p { font-size: 1.1rem; color: var(--muted); max-width: 600px; margin: 0 auto 24px; }
+  .badge-row { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+  .badge {
+    padding: 8px 16px; border-radius: 20px; font-size: 0.85rem;
+    background: var(--surface); border: 1px solid var(--border); color: var(--text);
+  }
+
+  /* Sections */
+  section { padding: 60px 24px; }
+  .section-title {
+    text-align: center; font-size: 1.8rem; margin-bottom: 40px;
+    color: var(--text); position: relative;
+  }
+  .section-title::after {
+    content: ""; display: block; width: 60px; height: 3px;
+    background: var(--primary); margin: 12px auto 0;
+  }
+
+  /* Featured project cards */
+  .projects-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px; margin-top: 40px;
+  }
+  .project-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    padding: 24px; transition: border-color 0.2s;
+  }
+  .project-card:hover { border-color: var(--primary); }
+  .project-card h3 { font-size: 1.2rem; margin-bottom: 8px; color: var(--text); }
+  .project-card .desc { color: var(--muted); font-size: 0.9rem; margin-bottom: 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+  .tag {
+    padding: 4px 12px; border-radius: 12px;
+    background: var(--bg); color: var(--muted); font-size: 0.8rem;
+    border: 1px solid var(--border);
+  }
+
+  /* About */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .about-text { font-size: 1.05rem; color: var(--muted); }
+  .skill-list { display: flex; flex-wrap: wrap; gap: 12px; }
+  .skill-chip {
+    padding: 8px 16px; border-radius: 20px;
+    background: var(--surface); border: 1px solid var(--border); color: var(--text); font-size: 0.85rem;
+  }
+
+  /* Contact */
+  .contact {
+    text-align: center; padding: 80px 24px;
+    background: var(--surface); border-radius: 8px;
+  }
+  .contact button {
+    padding: 12px 28px; border: none; border-radius: 8px;
+    background: var(--primary); color: #fff; cursor: pointer; font-size: 1rem;
+  }
+  .socials { display: flex; gap: 20px; justify-content: center; margin-top: 24px; }
+  .socials a { color: var(--muted); font-size: 1.2rem; }
+
+  /* Footer */
+  footer {
+    text-align: center; padding: 32px; color: var(--muted); font-size: 0.85rem;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Riyanto</div>
+  <nav>
+    <a href="#tentang">Tentang</a>
+    <a href="#proyek">Proyek</a>
+    <a href="#kontak">Kontak</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Riyanto</h1>
+  <p>Lecturer in Information Management @ Politeknik Negeri Padang</p>
+  <div class="badge-row">
+    <span class="badge">Laravel</span>
+    <span class="badge">REST API</span>
+    <span class="badge">Android (MVVM)</span>
+    <span class="badge">Decision Support</span>
+    <span class="badge">Open Source</span>
+  </div>
+</section>
+
+<section id="tentang">
+  <h2 class="section-title">Tentang Saya</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>Saya adalah dosen di Program Studi Manajemen Informatika, Politeknik Negeri Padang. Fokus pengajaran dan penelitian saya di bidang pengembangan sistem informasi, aplikasi mobile, REST API, serta algoritma pendukung pengambilan keputusan.</p>
+      <p>Saya senang membangun tools open source yang bermanfaat untuk pembelajaran dan industri.</p>
+      <div class="skill-list">
+        <span class="skill-chip">Laravel</span>
+        <span class="skill-chip">PHP</span>
+        <span class="skill-chip">Android (Java)</span>
+        <span class="skill-chip">MVVM</span>
+        <span class="skill-chip">Retorift</span>
+        <span class="skill-chip">Laravel</span>
+        <span class="skill-chip">REST API</span>
+        <span class="skill-chip">MOORA</span>
+        <span class="skill-chip">SAW</span>
+      </div>
+    </div>
+    <div class="about-text">
+      <h2>Statistik Ringkas</h2>
+      <ul style="color: var(--muted); font-size: 1.05rem; line-height: 1.8;">
+        <li>⬢ Repositori: <strong>94</strong></li>
+        <li>⬢ Followers: <strong>26</strong></li>
+        <li>⬢ Proyek utama: <strong>5</strong> (dipanahkan)</li>
+        <li>⬢ Bahasa: <strong>Laravel, Java, PHP, Kotlin</strong></li>
+      </ul>
+      <div style="margin-top: 16px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 16px;">
+        <strong style="color: var(--text);">🔍 Repo terbaru</strong>
+        <ul style="color: var(--muted); font-size: 0.9rem; margin-top: 8px;">
+          <li><a href="#">ProMan</a></li>
+          <li><a href="#">pipos</a></li>
+          <li><a href="#">IndonesiaKu-Lang</a></li>
+          <li><a href="#">erp</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="proyek">
+  <h2 class="section-title">Proyek</h2>
+  <div class="projects-grid">
+    <div class="project-card">
+      <h3>ProMan</h3>
+      <div class="desc">Sistem manajemen proyek modern dengan kolaborasi tim, pelacakan tugas, dan komunikasi real-time.</div>
+      <div class="tags">
+        <span class="tag">Node.js</span>
+        <span class="tag">Express</span>
+        <span class="tag">Tailwind</span>
+      </div>
+      <a href="#" style="color: var(--primary);">Lihat repositori →</a>
+    </div>
+    <div class="project-card">
+      <h3>pipos</h3>
+      <div class="desc">Poin of Sales (POS) berbasis web menggunakan PHP/Laravel, untuk SMK Negeri 1 Pangkalan Kerinci.</div>
+      <div class="tags">
+        <span class="tag">Laravel</span>
+        <span class="tag">PHP</span>
+        <span class="tag">Bootstrap</span>
+      </div>
+      <a href="#" style="color: var(--primary);">Lihat repositori →</a>
+    </div>
+    <div class="project-card">
+      <h3>IndonesiaKu-Lang</h3>
+      <div class="desc">Bahasa pemrograman open-source independen dengan sintaks berbahasa Indonesia + Virtual Machine (bytecode).</div>
+      <div class="tags">
+        <span class="tag">Kotlin</span>
+        <span class="tag">VM</span>
+        <span class="tag">Open Source</span>
+      </div>
+      <a href="#" style="color: var(--primary);">Lihat repositori →</a>
+    </div>
+    <div class="project-card">
+      <h3>erp</h3>
+      <div class="desc">Enterprise Resource Planning pembelajaran untuk matakuliah Pengembangan Sistem Enterprise.</div>
+      <div class="tags">
+        <span class="tag">Laravel</span>
+        <span class="tag">REST API</span>
+        <span class="tag">SQLite</span>
+      </div>
+      <a href="#" style="color: var(--primary);">Lihat repositori →</a>
+    </div>
+  </div>
+</section>
+
+<section id="kontak" class="contact">
+  <h2>Kontak</h2>
+  <p>Silakan hubungi saya untuk kerja sama, riset, atau kerjasama akademik.</p>
+  <button onclick="alert('Email: reeyanto@poltekpa.ac.id')">Hubungi Saya</button>
+  <div class="socials">
+    <a href="https://github.com/reeyanto">GitHub</a>
+    <a href="https://medium.com/@reeyanto">Medium</a>
+    <a href="https://linkedin.com/in/reeyanto">LinkedIn</a>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 Riyanto — Lecturer @ Politeknik Negeri Padang</p>
+</footer>
+
+</body>
+</html>
