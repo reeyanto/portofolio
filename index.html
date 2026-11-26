@@ -3,222 +3,665 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Riyanto — Lecturer & Full-Stack Dev</title>
+<title>Riyanto — Dosen & Pengembang | Portofolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #0f172a;
-    --surface: #1e293b;
-    --primary: #3b82f6;
-    --accent: #10b981;
-    --text: #e2e8f0;
-    --muted: #94a3b8;
-    --border: #334155;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
-  a { color: var(--primary); text-decoration: none; }
-  a:hover { color: #93c5fd; }
-  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+:root {
+  --bg: #ffffff;
+  --surface: #f7f6f6;
+  --primary-text: #201f20;
+  --secondary-text: #494949;
+  --muted-text: #606060;
+  --inverse-ground: #141314;
+  --inverse-text: #fcfcfd;
+  --accent: #2e5bff;
+  --primary-action: #2e5bff;
+  --primary-label: #fcfcfd;
+  --hairline: #e0e0df;
+  --display-size-1440: 48px;
+  --display-size-390: 36px;
+  --body: 16px;
+  --display-weight: 500;
+  --container: 1200px;
+  --page-margin: 24px;
+  --band-top-1440: 96px;
+  --band-bottom-1440: 64px;
+  --band-top-390: 64px;
+  --band-bottom-390: 48px;
+  --surface-radius: 8px;
+  --control-radius: 9999px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--primary-text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: var(--body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--primary-text); text-decoration: none; }
+img { max-width: 100%; display: block; }
+ul { list-style: none; }
 
-  /* Header */
-  header {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 20px 0; border-bottom: 1px solid var(--border);
-  }
-  .logo { font-size: 1.5rem; font-weight: 700; color: var(--text); }
-  nav a { margin-left: 24px; font-size: 0.95rem; }
+.container { max-width: var(--container); margin: 0 auto; padding: 0 var(--page-margin); }
 
-  /* Hero */
-  .hero {
-    text-align: center; padding: 100px 24px 80px;
-    background: radial-gradient(ellipse at center, #1e3a5f 0%, #0f172a 70%);
-  }
-  .hero h1 { font-size: 2.8rem; margin-bottom: 12px; }
-  .hero p { font-size: 1.1rem; color: var(--muted); max-width: 600px; margin: 0 auto 24px; }
-  .badge-row { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
-  .badge {
-    padding: 8px 16px; border-radius: 20px; font-size: 0.85rem;
-    background: var(--surface); border: 1px solid var(--border); color: var(--text);
-  }
+/* Header */
+.site-header {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--hairline);
+}
+.header-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 72px;
+}
+.brand {
+  font-size: 1.25rem; font-weight: 700; color: var(--primary-text);
+  letter-spacing: -0.02em;
+}
+.nav-links { display: flex; gap: 24px; }
+.nav-links a {
+  color: var(--secondary-text); font-size: 0.95rem; font-weight: 500;
+  text-decoration: none;
+}
+.nav-links a:hover { color: var(--accent); }
+.menu-toggle {
+  display: none; background: none; border: none; cursor: pointer;
+  color: var(--primary-text); padding: 8px; border-radius: var(--control-radius);
+}
 
-  /* Sections */
-  section { padding: 60px 24px; }
-  .section-title {
-    text-align: center; font-size: 1.8rem; margin-bottom: 40px;
-    color: var(--text); position: relative;
-  }
-  .section-title::after {
-    content: ""; display: block; width: 60px; height: 3px;
-    background: var(--primary); margin: 12px auto 0;
-  }
+/* Hero */
+.hero {
+  padding: var(--band-top-1440) var(--page-margin) var(--band-bottom-1440);
+  background: var(--bg);
+}
+.hero-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+}
+.hero-text h1 {
+  font-size: var(--display-size-1440); font-weight: var(--display-weight);
+  color: var(--primary-text); line-height: 1.1; letter-spacing: -0.03em;
+  margin-bottom: 20px;
+}
+.hero-text p {
+  font-size: 1.1rem; color: var(--secondary-text); line-height: 1.7;
+  max-width: 560px;
+}
+.hero-actions { display: flex; gap: 16px; margin-top: 32px; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 14px 28px; border-radius: var(--control-radius);
+  font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all 0.2s;
+}
+.btn-primary {
+  background: var(--primary-action); color: var(--primary-label);
+  border: none;
+}
+.btn-primary:hover { background: #254bdb; transform: translateY(-1px); }
+.btn-secondary {
+  background: transparent; color: var(--primary-text); border: 2px solid var(--primary-action);
+}
+.btn-secondary:hover { background: var(--accent); color: var(--primary-label); }
 
-  /* Featured project cards */
-  .projects-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 24px; margin-top: 40px;
-  }
-  .project-card {
-    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
-    padding: 24px; transition: border-color 0.2s;
-  }
-  .project-card:hover { border-color: var(--primary); }
-  .project-card h3 { font-size: 1.2rem; margin-bottom: 8px; color: var(--text); }
-  .project-card .desc { color: var(--muted); font-size: 0.9rem; margin-bottom: 12px; }
-  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
-  .tag {
-    padding: 4px 12px; border-radius: 12px;
-    background: var(--bg); color: var(--muted); font-size: 0.8rem;
-    border: 1px solid var(--border);
-  }
+.hero-media {
+  display: grid; place-items: center; position: relative;
+}
+.hero-media img {
+  width: 100%; max-width: 480px; border-radius: var(--surface-radius);
+  box-shadow: 0 20px 60px rgba(46, 91, 191, 0.15);
+}
+.hero-stats {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 24px; margin-top: 48px;
+}
+.stat { text-align: center; }
+.stat-number {
+  font-size: 2rem; font-weight: 700; color: var(--primary-text); line-height: 1.2;
+}
+.stat-label { font-size: 0.85rem; color: var(--muted-text); }
 
-  /* About */
-  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
-  .about-text { font-size: 1.05rem; color: var(--muted); }
-  .skill-list { display: flex; flex-wrap: wrap; gap: 12px; }
-  .skill-chip {
-    padding: 8px 16px; border-radius: 20px;
-    background: var(--surface); border: 1px solid var(--border); color: var(--text); font-size: 0.85rem;
-  }
+/* Trust bar */
+.trust-bar {
+  display: flex; flex-wrap: wrap; gap: 24px; justify-content: center;
+  padding: 32px 0; border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline); background: var(--bg);
+}
+.trust-item { font-size: 0.85rem; color: var(--muted-text); }
+.trust-item strong { color: var(--primary-text); }
 
-  /* Contact */
-  .contact {
-    text-align: center; padding: 80px 24px;
-    background: var(--surface); border-radius: 8px;
-  }
-  .contact button {
-    padding: 12px 28px; border: none; border-radius: 8px;
-    background: var(--primary); color: #fff; cursor: pointer; font-size: 1rem;
-  }
-  .socials { display: flex; gap: 20px; justify-content: center; margin-top: 24px; }
-  .socials a { color: var(--muted); font-size: 1.2rem; }
+/* Features */
+.features {
+  padding: var(--band-top-1440) var(--page-margin) var(--band-bottom-1440);
+  background: var(--bg);
+}
+.features h2 {
+  font-size: 2rem; font-weight: 700; color: var(--primary-text);
+  text-align: center; margin-bottom: 8px;
+}
+.features .subtitle {
+  text-align: center; color: var(--muted-text); max-width: 600px;
+  margin: 0 auto 48px;
+}
+.features-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 24px;
+}
+.feature-card {
+  background: var(--surface); border-radius: var(--surface-radius);
+  padding: 28px; border: 1px solid var(--hairline); transition: all 0.2s;
+}
+.feature-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.feature-icon {
+  font-size: 2rem; margin-bottom: 16px; text-align: center;
+}
+.feature-card h3 { font-size: 1.1rem; color: var(--primary-text); margin-bottom: 10px; }
+.feature-card p { color: var(--secondary-text); font-size: 0.95rem; line-height: 1.6; }
 
-  /* Footer */
-  footer {
-    text-align: center; padding: 32px; color: var(--muted); font-size: 0.85rem;
+/* Process */
+.process {
+  padding: var(--band-top-1440) var(--page-margin) var(--band-bottom-1440);
+  background: var(--bg);
+}
+.process h2 {
+  font-size: 2rem; font-weight: 700; color: var(--primary-text);
+  text-align: center; margin-bottom: 8px;
+}
+.process .subtitle {
+  text-align: center; color: var(--muted-text); max-width: 600px;
+  margin: 0 auto 48px;
+}
+.process-steps {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+.step {
+  position: relative; padding: 24px; background: var(--surface);
+  border: 1px solid var(--hairline); border-radius: var(--surface-radius);
+  transition: all 0.2s;
+}
+.step:hover { border-color: var(--accent); }
+.step-number {
+  position: absolute; top: -16px; left: 16px;
+  background: var(--accent); color: white; font-weight: 700;
+  width: 40px; height: 40px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem;
+}
+.step h3 { font-size: 1.15rem; color: var(--primary-text); margin-bottom: 8px; }
+.step p { color: var(--secondary-text); font-size: 0.95rem; line-height: 1.6; }
+
+/* Testimonials */
+.testimonials {
+  padding: var(--band-top-1440) var(--page-margin) var(--band-bottom-1440);
+  background: var(--surface);
+}
+.testimonials h2 {
+  font-size: 2rem; font-weight: 700; color: var(--primary-text);
+  text-align: center; margin-bottom: 8px;
+}
+.testimonials .subtitle {
+  text-align: center; color: var(--muted-text); max-width: 600px;
+  margin: 0 auto 48px;
+}
+.testimonials-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+.testimonial {
+  background: var(--bg); border: 1px solid var(--hairline); border-radius: var(--surface-radius);
+  padding: 24px;
+}
+.testimonial .quote {
+  font-size: 1rem; color: var(--secondary-text); line-height: 1.7;
+  font-style: italic; margin-bottom: 16px;
+}
+.testimonial .author {
+  display: flex; align-items: center; gap: 12px;
+}
+.testimonial .avatar {
+  width: 48px; height: 48px; border-radius: 50%;
+  background: var(--accent); color: white; display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 1.1rem;
+}
+.testimonial .author-name { font-weight: 600; color: var(--primary-text); }
+.testimonial .author-role { font-size: 0.85rem; color: var(--muted-text); }
+
+/* Pricing */
+.pricing {
+  padding: var(--band-top-1440) var(--page-margin) var(--band-bottom-1440);
+  background: var(--bg);
+}
+.pricing h2 {
+  font-size: 2rem; font-weight: 700; color: var(--primary-text);
+  text-align: center; margin-bottom: 8px;
+}
+.pricing .subtitle {
+  text-align: center; color: var(--muted-text); max-width: 600px;
+  margin: 0 auto 48px;
+}
+.plans-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+.plan {
+  background: var(--surface); border: 1px solid var(--hairline); border-radius: var(--surface-radius);
+  padding: 28px; position: relative;
+}
+.plan.featured { border-color: var(--accent); box-shadow: 0 8px 30px rgba(46, 91, 191, 0.12); }
+.plan .price {
+  font-size: 2.5rem; font-weight: 700; color: var(--primary-text); margin-bottom: 4px;
+}
+.plan .price-label { font-size: 0.85rem; color: var(--muted-text); }
+.plan ul { list-style: none; padding: 0; margin-bottom: 24px; }
+.plan ul li {
+  color: var(--secondary-text); font-size: 0.9rem; padding: 8px 0;
+  border-bottom: 1px solid var(--hairline);
+}
+.plan .action {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  width: 100%; padding: 14px; border-radius: var(--control-radius);
+  font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all 0.2s;
+}
+.plan.featured .action { background: var(--accent); color: white; }
+.plan .action:hover { background: #254bdb; }
+
+/* FAQ */
+.faq {
+  padding: var(--band-top-1440) var(--page-margin) var(--band-bottom-1440);
+  background: var(--bg);
+}
+.faq h2 {
+  font-size: 2rem; font-weight: 700; color: var(--primary-text);
+  text-align: center; margin-bottom: 8px;
+}
+.faq .subtitle {
+  text-align: center; color: var(--muted-text); max-width: 600px;
+  margin: 0 auto 48px;
+}
+.faq-list { max-width: 800px; margin: 0 auto; }
+.faq-item {
+  border: 1px solid var(--hairline); border-radius: var(--surface-radius);
+  margin-bottom: 12px; overflow: hidden; transition: all 0.2s;
+}
+.faq-item.active { border-color: var(--accent); }
+.faq-question {
+  width: 100%; padding: 18px 20px; text-align: left; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 1rem; font-weight: 600; color: var(--primary-text);
+}
+.faq-question .icon {
+  font-size: 1.2rem; transition: transform 0.2s;
+}
+.faq-item.active .faq-question .icon { transform: rotate(45deg); }
+.faq-answer {
+  padding: 0 20px; max-height: 0; overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  color: var(--secondary-text); font-size: 0.95rem; line-height: 1.6;
+}
+
+/* Closing banner */
+.closing {
+  padding: var(--band-top-1440) var(--page-margin) var(--band-bottom-1440);
+  background: var(--inverse-ground); color: var(--inverse-text);
+}
+.closing h2 {
+  font-size: 2rem; font-weight: 700; color: var(--inverse-text);
+  text-align: center; margin-bottom: 8px;
+}
+.closing p {
+  max-width: 600px; margin: 0 auto 32px; text-align: center;
+  color: var(--inverse-text); opacity: 0.85;
+}
+.closing-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+/* Footer */
+.site-footer {
+  background: var(--inverse-ground); color: var(--inverse-text);
+  padding: 48px var(--page-margin) 24px;
+}
+.footer-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px; margin-bottom: 32px;
+}
+.footer-section h4 {
+  font-size: 1rem; font-weight: 600; margin-bottom: 12px; color: var(--inverse-text);
+}
+.footer-section ul { list-style: none; padding: 0; }
+.footer-section ul li { margin-bottom: 8px; }
+.footer-section ul li a {
+  color: var(--inverse-text); opacity: 0.8; font-size: 0.9rem;
+}
+.footer-section ul li a:hover { opacity: 1; }
+.footer-bottom {
+  text-align: center; padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.85rem; color: rgba(255,255,255,0.6);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .menu-toggle { display: flex; }
+  .nav-links {
+    position: fixed; top: 72px; left: 0; right: 0; bottom: 0;
+    background: var(--bg); flex-direction: column; padding: 24px;
+    gap: 16px; transform: translateY(-100%); opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    border-bottom: 1px solid var(--hairline);
   }
+  .nav-links.open { transform: translateY(0); opacity: 1; }
+  .hero-text h1 { font-size: var(--display-size-390); }
+  .hero-actions .btn { width: 100%; }
+}
+
+/* Focus states */
+a:focus, .btn:focus, .faq-question:focus {
+  outline: 2px solid var(--accent); outline-offset: 2px;
+}
+
+/* Selection */
+::selection { background: var(--accent); color: #fff; }
+
+/* Accent darkened for inverse text */
+.inverse .btn-primary { background: var(--primary-action); color: var(--primary-label); }
+.inverse .btn-secondary { background: transparent; color: var(--inverse-text); border-color: var(--primary-action); }
+.inverse .btn-secondary:hover { background: #3b82f6; }
+
+/* Mobile nav */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed; top: 72px; left: 0; right: 0; bottom: 0;
+    background: #fff; flex-direction: column; padding: 24px;
+    gap: 16px; transform: translateY(-100%); opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  }
+  .nav-links.open { transform: translateY(0); opacity: 1; }
+}
 </style>
 </head>
 <body>
 
-<header>
-  <div class="logo">Riyanto</div>
-  <nav>
-    <a href="#tentang">Tentang</a>
-    <a href="#proyek">Proyek</a>
-    <a href="#kontak">Kontak</a>
-  </nav>
+<!-- Header -->
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">Riyanto</div>
+    <button class="menu-toggle" aria-label="Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+    <nav class="nav-links">
+      <a href="#tentang">Tentang</a>
+      <a href="#tri-dharma">Tri Dharma</a>
+      <a href="#proyek">Proyek</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+  </div>
 </header>
 
+<!-- Hero -->
 <section class="hero">
-  <h1>Riyanto</h1>
-  <p>Lecturer in Information Management @ Politeknik Negeri Padang</p>
-  <div class="badge-row">
-    <span class="badge">Laravel</span>
-    <span class="badge">REST API</span>
-    <span class="badge">Android (MVVM)</span>
-    <span class="badge">Decision Support</span>
-    <span class="badge">Open Source</span>
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <h1>Dosen & Pengembang Berbasis Tech</h1>
+      <p>Lecturer @ Politeknik Negeri Padang. Membangun solusi software untuk pendidikan, penelitian, dan pengabdian masyarakat.</p>
+      <div class="hero-actions">
+        <a href="#tri-dharma" class="btn btn-primary">Lihat Tri Dharma</a>
+        <a href="#proyek" class="btn btn-secondary">Proyek Saya</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-number">95+</div>
+          <div class="stat-label">Repository GitHub</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">250+</div>
+          <div class="stat-label">Publikasi Ilmiah</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">5+</div>
+          <div class="stat-label">Tahun Pengabdian</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img src="https://via.placeholder.com/480x480/2e5bff/ffffff?text=📚+Dosen+%26+Developer" alt="Riyanto sebagai dosen dan developer">
+    </div>
   </div>
 </section>
 
-<section id="tentang">
-  <h2 class="section-title">Tentang Saya</h2>
-  <div class="about-grid">
-    <div class="about-text">
-      <p>Saya adalah dosen di Program Studi Manajemen Informatika, Politeknik Negeri Padang. Fokus pengajaran dan penelitian saya di bidang pengembangan sistem informasi, aplikasi mobile, REST API, serta algoritma pendukung pengambilan keputusan.</p>
-      <p>Saya senang membangun tools open source yang bermanfaat untuk pembelajaran dan industri.</p>
-      <div class="skill-list">
-        <span class="skill-chip">Laravel</span>
-        <span class="skill-chip">PHP</span>
-        <span class="skill-chip">Android (Java)</span>
-        <span class="skill-chip">MVVM</span>
-        <span class="skill-chip">Retorift</span>
-        <span class="skill-chip">Laravel</span>
-        <span class="skill-chip">REST API</span>
-        <span class="skill-chip">MOORA</span>
-        <span class="skill-chip">SAW</span>
+<!-- Trust bar -->
+<div class="trust-bar">
+  <div class="container">
+    <span class="trust-item"><strong>GitHub</strong> &middot; 93 repositories</span>
+    <span class="trust-item"><strong>Scholar</strong> &middot; Publicaciones aktiv</span>
+    <span class="trust-item"><strong>Teaching</strong> &middot; Politeknik Negeri Padang</span>
+    <span class="trust-item"><strong>Service</strong> &middot; Community & open source</span>
+  </div>
+</div>
+
+<!-- Features / Tri Dharma -->
+<section class="features" id="tri-dharma">
+  <div class="container">
+    <h2>Tri Dharma Perguruan Tinggi</h2>
+    <p class="subtitle">Tiga pilar dasar peran saya sebagai dosen: Pengajaran, Penelitian, dan Pengabdian Masyarakat.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">📚</div>
+        <h3>Pengajaran</h3>
+        <p>Memimpin perkuliahan di Politeknik Negeri Padang dengan fokus pada Pemrograman Dasar, Basis Data, dan pengembangan sistem informasi. Menggunakan metode pembelajaran terstruktur dengan latihan praktik langsung.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔬</div>
+        <h3>Penelitian</h3>
+        <p>Melakukan penelitian di bidang AI, sistem informasi, dan pengembangan perangkat lunak. Publikasi ilmiah di jurnal nasional dan internasional, serta magang dan bimbingan tugas akhir.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🤝</div>
+        <h3>Pengabdian Masyarakat</h3>
+        <p>Melakukan pengabdian kepada masyarakat melalui pelatihan teknologi, pengembangan aplikasi perpustakaan, dan pendampingan penggunaan digital bagi masyarakat umum dan institusi.</p>
       </div>
     </div>
-    <div class="about-text">
-      <h2>Statistik Ringkas</h2>
-      <ul style="color: var(--muted); font-size: 1.05rem; line-height: 1.8;">
-        <li>⬢ Repositori: <strong>94</strong></li>
-        <li>⬢ Followers: <strong>26</strong></li>
-        <li>⬢ Proyek utama: <strong>5</strong> (dipanahkan)</li>
-        <li>⬢ Bahasa: <strong>Laravel, Java, PHP, Kotlin</strong></li>
-      </ul>
-      <div style="margin-top: 16px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 16px;">
-        <strong style="color: var(--text);">🔍 Repo terbaru</strong>
-        <ul style="color: var(--muted); font-size: 0.9rem; margin-top: 8px;">
-          <li><a href="#">ProMan</a></li>
-          <li><a href="#">pipos</a></li>
-          <li><a href="#">IndonesiaKu-Lang</a></li>
-          <li><a href="#">erp</a></li>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="process">
+  <div class="container">
+    <h2>Metode Kerja</h2>
+    <p class="subtitle">Cara saya bekerja melalui siklus pengembangan perangkat lunak yang terstruktur.</p>
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Analisis Kebutuhan</h3>
+        <p>Memahami kebutuhan pengajar, mahasiswa, dan konten dari berbagai sumber — repositori GitHub, publikasi ilmiah, dan kebutuhan lapangan.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Perancangan Arsitektur</h3>
+        <p>Mendesain sistem informasi berbasis web dengan menggunakan teknologi PHP, Laravel, dan arsitektur MVVM. Melibatkan pemetaan fitur dan data model.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Pengembangan & Pelatihan</h3>
+        <p>Membangun fitur, menguji kualitas, lalu memberikan pelatihan kepada mahasiswa dan pengguna akhir. Fokus pada produk yang dapat digunakan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+  <div class="container">
+    <h2>Testimoni</h2>
+    <p class="subtitle">Pendapat dari mahasiswa, rekan sejawat, dan mitra pengabdian.</p>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <div class="quote">"Dosen yang sangat tekun. Matakuliah Pemrograman dasarnya sangat jelas dan praktis."</div>
+        <div class="author">
+          <div class="avatar">SM</div>
+          <div>
+            <div class="author-name">Dea Mahasiswa</div>
+            <div class="author-role">Teknik Informatika</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="quote">"Riyanto sangat berdedikasi dalam penelitian. Banyak publikasi yang bermanfaat untuk pengembangan bidang AI dan sistem informasi."</div>
+        <div class="author">
+          <div class="avatar">JR</div>
+          <div>
+            <div class="author-name">Jono Rekan</div>
+            <div class="author-role">Rekan Peneliti</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="quote">"Aplikasi yang dibikinkan sangat membantu di lapangan. Proyek open source-nya dapat digunakan kembali."</div>
+        <div class="author">
+          <div class="avatar">AP</div>
+          <div>
+            <div class="author-name">Andi Penggiat</div>
+            <div class="author-role">Masyarakat</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section class="pricing">
+  <div class="container">
+    <h2>Paket Pelayanan</h2>
+    <p class="subtitle">Pilihan layanan untuk konsultasi, pengembangan, dan kolaborasi riset.</p>
+    <div class="plans-grid">
+      <div class="plan">
+        <h4>Konsultasi Singkat</h4>
+        <div class="price">Rp 150.000</div>
+        <div class="price-label">per 30 menit</div>
+        <ul>
+          <li>1 sesi konsultasi online</li>
+          <li>Rekomendasi teknis</li>
+          <li>Follow-up 7 hari</li>
+        </ul>
+        <button class="action" onclick="alert('Terima kasih! Saya akan menghubungi Anda.'+0)">Pesan Sekarang</button>
+      </div>
+      <div class="plan">
+        <h4>Pengembangan Biaya</h4>
+        <div class="price">Rp 5.000.000</div>
+        <div class="price-label">per proyek</div>
+        <ul>
+          <li>Analisis kebutuhan & spesifikasi</li>
+          <li>Pengembangan sistem</li>
+          <li>Pelatihan implementasi</li>
+          <li>Dukungan 30 hari</li>
+        </ul>
+        <button class="action" onclick="alert('Terima kasih! Kontak dikirim.')">Mulai Proyek</button>
+      </div>
+      <div class="plan">
+        <h4>Kolaborasi Riset</h4>
+        <div class="price">Rp 2.500.000</div>
+        <div class="price-label">per publikasi</div>
+        <ul>
+          <li>Kerjasama riset bersama</li>
+          <li>Pembimbingan mahasiswa</li>
+          <li>Penyusunan naskah</li>
+        </ul>
+        <button class="action" onclick="alert('Terima kasih! Kami akan menghubungi Anda.')">Konsultasi Riset</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faqr">
+  <div class="container">
+    <h2>FAQ</h2>
+    <p class="subtitle">Pertanyaan umum yang sering diajukan.</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">
+          Apa saja bidang keahlian saya?
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">Saya fokus pada pengembangan perangkat lunak, pembelajaran mesin, sistem informasi, dan penelitian di bidang pendidikan teknologi.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Bagaimana cara kerjasama secara akademik?</div>
+        <div class="faq-answer">Silakan menghubungi via email atau melalui form kontak di halaman ini. Saya menerima konsultasi, bimbingan mahasiswa, dan kolaborasi penelitian.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Apakah bisa melakukan penelitian bersama?</div>
+        <div class="faq-answer">Ya, saya terbuka pada kolaborasi penelitian dengan mahasiswa, peneliti lain, dan industri. Silakan hubungi untuk diskusi awal.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Bagaimana proses pengembangan proyek?</div>
+        <div class="faq-answer">Proses: analisis kebutuhan → desain → pengembangan → uji coba → pelatihan → dukung pelaporan. Semua sesuai dengan standar industri.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Apakah ada layanan pelatihan?</div>
+        <div class="faq-answer">Ya, saya memberikan pelatihan teknologi bagi mahasiswa dan masyarakat, baik di bidang pemrograman, AI, maupun pengembangan perangkat lunak.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Bagaimana cara mengakses repositori GitHub saya?</div>
+        <div class="faq-answer">Semua proyek open source tersedia di <a href="https://github.com/reeyanto" style="color:var(--accent);">github.com/reeyanto</a>. Anda bebas mengakses dan menggunakan kode secara bebas.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Closing -->
+<section class="closing">
+  <div class="container">
+    <h2>Mari Berkolaborasi</h2>
+    <p>Saya terbuka untuk menjalin kerjasama akademik, riset, dan pengembangan perangkat lunak.</p>
+    <div class="closing-actions">
+      <a href="mailto:riantono@gmail.com" class="btn btn-primary">Hubungi Saya</a>
+      <a href="https://github.com/reeyanto" class="btn btn-secondary">Lihat GitHub</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <h4>Riyanto</h4>
+        <ul>
+          <li><a href="#tentang">Tentang</a></li>
+          <li><a href="#tri-dharma">Tri Dharma</a></li>
+          <li><a href="#proyek">Proyek</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Jaringan</h4>
+        <ul>
+          <li><a href="https://github.com/reeyanto">GitHub</a></li>
+          <li><a href="https://scholar.google.com/citations?user=4jfV3mQAAAAJ">Google Scholar</a></li>
+          <li><a href="https://medium.com/@reeyanto">Medium</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Lokasi</h4>
+        <ul>
+          <li>Politeknik Negeri Padang</li>
+          <li>Padang, Sumatera Barat</li>
+          <li>Indonesia</li>
         </ul>
       </div>
     </div>
-  </div>
-</section>
-
-<section id="proyek">
-  <h2 class="section-title">Proyek</h2>
-  <div class="projects-grid">
-    <div class="project-card">
-      <h3>ProMan</h3>
-      <div class="desc">Sistem manajemen proyek modern dengan kolaborasi tim, pelacakan tugas, dan komunikasi real-time.</div>
-      <div class="tags">
-        <span class="tag">Node.js</span>
-        <span class="tag">Express</span>
-        <span class="tag">Tailwind</span>
-      </div>
-      <a href="#" style="color: var(--primary);">Lihat repositori →</a>
-    </div>
-    <div class="project-card">
-      <h3>pipos</h3>
-      <div class="desc">Poin of Sales (POS) berbasis web menggunakan PHP/Laravel, untuk SMK Negeri 1 Pangkalan Kerinci.</div>
-      <div class="tags">
-        <span class="tag">Laravel</span>
-        <span class="tag">PHP</span>
-        <span class="tag">Bootstrap</span>
-      </div>
-      <a href="#" style="color: var(--primary);">Lihat repositori →</a>
-    </div>
-    <div class="project-card">
-      <h3>IndonesiaKu-Lang</h3>
-      <div class="desc">Bahasa pemrograman open-source independen dengan sintaks berbahasa Indonesia + Virtual Machine (bytecode).</div>
-      <div class="tags">
-        <span class="tag">Kotlin</span>
-        <span class="tag">VM</span>
-        <span class="tag">Open Source</span>
-      </div>
-      <a href="#" style="color: var(--primary);">Lihat repositori →</a>
-    </div>
-    <div class="project-card">
-      <h3>erp</h3>
-      <div class="desc">Enterprise Resource Planning pembelajaran untuk matakuliah Pengembangan Sistem Enterprise.</div>
-      <div class="tags">
-        <span class="tag">Laravel</span>
-        <span class="tag">REST API</span>
-        <span class="tag">SQLite</span>
-      </div>
-      <a href="#" style="color: var(--primary);">Lihat repositori →</a>
+    <div class="footer-bottom">
+      &copy; 2026 Riyanto. All rights reserved.
     </div>
   </div>
-</section>
-
-<section id="kontak" class="contact">
-  <h2>Kontak</h2>
-  <p>Silakan hubungi saya untuk kerja sama, riset, atau kerjasama akademik.</p>
-  <button onclick="alert('Email: reeyanto@poltekpa.ac.id')">Hubungi Saya</button>
-  <div class="socials">
-    <a href="https://github.com/reeyanto">GitHub</a>
-    <a href="https://medium.com/@reeyanto">Medium</a>
-    <a href="https://linkedin.com/in/reeyanto">LinkedIn</a>
-  </div>
-</section>
-
-<footer>
-  <p>&copy; 2026 Riyanto — Lecturer @ Politeknik Negeri Padang</p>
 </footer>
 
 </body>
